@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="400.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.branow.copier.controllers.CopierMenu">
+    <BorderPane layoutX="160.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0"
+                AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <bottom>
+            <GridPane BorderPane.alignment="CENTER">
+                <columnConstraints>
+                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="200.0"/>
+                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES"/>
+                </rowConstraints>
+                <TextField fx:id="tfIn" onAction="#tfInAction" onMouseClicked="#tfInMouseClicked">
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <Button fx:id="bChoose" mnemonicParsing="false" onAction="#bChooseAction" GridPane.columnIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </GridPane.margin>
+                    <graphic>
+                        <ImageView>
+                            <image>
+                                <Image requestedHeight="20" requestedWidth="20" url="@img/folder.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </GridPane>
+        </bottom>
+        <center>
+          <ListView fx:id="lvFiles" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+              </BorderPane.margin>
+              <contextMenu>
+                  <ContextMenu>
+                      <items>
+                          <MenuItem mnemonicParsing="false" onAction="#miRemoveAction" text="remove"/>
+                      </items>
+                  </ContextMenu>
+              </contextMenu>
+          </ListView>
+        </center>
+        <top>
+          <GridPane BorderPane.alignment="CENTER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="NEVER"/>
+              </rowConstraints>
+              <children>
+                  <GridPane>
+                      <columnConstraints>
+                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="50.0" prefWidth="70.0"/>
+                          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="266.0"/>
+                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" minWidth="50.0" prefWidth="50.0"/>
+                      </columnConstraints>
+                      <rowConstraints>
+                          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="NEVER"/>
+                      </rowConstraints>
+                      <children>
+                          <Button fx:id="bChooseOut" mnemonicParsing="false" onAction="#bChooseOutAction"
+                                  GridPane.columnIndex="2">
+                              <GridPane.margin>
+                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                              </GridPane.margin>
+                              <graphic>
+                                  <ImageView>
+                                      <Image requestedHeight="20" requestedWidth="20" url="@img/folder.png"/>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                          <TextField fx:id="tfOut" onAction="#tfOutAction" onMouseClicked="#tfOutMouseClicked"
+                                     GridPane.columnIndex="1">
+                              <GridPane.margin>
+                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                              </GridPane.margin>
+                          </TextField>
+                          <Button fx:id="bCopy" mnemonicParsing="false" onAction="#bCopyAction"
+                                  GridPane.columnIndex="0">
+                              <GridPane.margin>
+                                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                              </GridPane.margin>
+                              <graphic>
+                                  <ImageView>
+                                      <Image requestedHeight="20" requestedWidth="20" url="@img/transfer.png"/>
+                                  </ImageView>
+                              </graphic>
+                          </Button>
+                      </children>
+                  </GridPane>
+                  <Separator prefWidth="200.0" GridPane.rowIndex="1">
+                      <opaqueInsets>
+                          <Insets/>
+                      </opaqueInsets>
+                      <GridPane.margin>
+                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </GridPane.margin>
+                  </Separator>
+              </children>
+          </GridPane>
+        </top>
+    </BorderPane>
+</AnchorPane>

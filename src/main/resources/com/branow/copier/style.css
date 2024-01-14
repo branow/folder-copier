@@ -1,0 +1,12 @@
+.label, .text-field, .text-area, .list-view, .button {
+    -fx-font-family: "Courier New", monospace;
+    -fx-font-size: 14;
+}
+
+#lTitle {
+    -fx-font-family: "Courier New", monospace;
+    -fx-font-size: 18;
+}
+.text-area {
+    -fx-font-size: 12;
+}
